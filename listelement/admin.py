@@ -13,5 +13,5 @@ class ElementAdmin(admin.ModelAdmin):
 
 admin.site.register(Type, TypeAdmin)
 admin.site.register(Category, CategoryAdmin)
-admin.site.register(Element, ElementAdmin)
+admin.site.register(Element, ElementAdmin )
 
