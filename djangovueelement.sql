@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-06-2020 a las 04:15:27
+-- Tiempo de generación: 18-06-2020 a las 22:32:50
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.5
 
@@ -124,7 +124,7 @@ CREATE TABLE `auth_user` (
 --
 
 INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES
-(1, 'pbkdf2_sha256$180000$aXfS0tnP2wtf$TVTYVNB/SMjeWwhVY7aQX4gtMHGF9zd5CBLolRyrEHk=', '2020-06-16 23:12:35.914358', 1, 'blazter', '', '', 'blazter@gmail.com', 1, 1, '2020-06-16 23:11:46.440266');
+(1, 'pbkdf2_sha256$180000$aXfS0tnP2wtf$TVTYVNB/SMjeWwhVY7aQX4gtMHGF9zd5CBLolRyrEHk=', '2020-06-18 19:46:05.672773', 1, 'blazter', '', '', 'blazter@gmail.com', 1, 1, '2020-06-16 23:11:46.440266');
 
 -- --------------------------------------------------------
 
@@ -176,7 +176,11 @@ INSERT INTO `django_admin_log` (`id`, `action_time`, `object_id`, `object_repr`,
 (2, '2020-06-16 23:17:12.179004', '1', 'Category object (1)', 1, '[{\"added\": {}}]', 9, 1),
 (3, '2020-06-16 23:17:32.904082', '2', 'Category object (2)', 1, '[{\"added\": {}}]', 9, 1),
 (4, '2020-06-16 23:18:02.717896', '2', 'Type object (2)', 1, '[{\"added\": {}}]', 7, 1),
-(5, '2020-06-16 23:18:45.695638', '1', 'Element object (1)', 1, '[{\"added\": {}}]', 8, 1);
+(5, '2020-06-16 23:18:45.695638', '1', 'Element object (1)', 1, '[{\"added\": {}}]', 8, 1),
+(6, '2020-06-18 19:49:18.723357', '2', 'Cate 2', 3, '', 9, 1),
+(7, '2020-06-18 19:49:18.885332', '1', 'Cate 1', 3, '', 9, 1),
+(8, '2020-06-18 19:49:47.272932', '2', 'Post', 3, '', 7, 1),
+(9, '2020-06-18 19:49:47.428241', '1', 'Producto', 3, '', 7, 1);
 
 -- --------------------------------------------------------
 
@@ -271,8 +275,11 @@ CREATE TABLE `listelement_category` (
 --
 
 INSERT INTO `listelement_category` (`id`, `title`, `url_clean`) VALUES
-(1, 'Cate 1', 'cate_1'),
-(2, 'Cate 2', 'cate_2');
+(4, 'Futbolistas', 'soccer_payers'),
+(5, 'Basquetbolistas', 'basketball_players'),
+(6, 'Nadadores', 'swimmers'),
+(7, 'Famosos', 'famous_people'),
+(8, 'Celebridades', 'celebrities');
 
 -- --------------------------------------------------------
 
@@ -294,7 +301,13 @@ CREATE TABLE `listelement_element` (
 --
 
 INSERT INTO `listelement_element` (`id`, `title`, `url_clean`, `description`, `category_id`, `type_id`) VALUES
-(1, 'Elemento 1', 'elemento_1', 'Elemento 1 Descripción', 1, 2);
+(4, 'Lionel Messi', 'messi_10', 'Es un futbolista argentino que juega como delantero o centrocampista. Ha desarrollado toda su carrera en el F. C. Barcelona de la Primera División de España y en la selección de Argentina, equipos de los que es capitán.', 4, 6),
+(5, 'Michael Jordan', 'michael_jordan', 'Michael Jeffrey Jordan es un exjugador de baloncesto estadounidense. En la actualidad es propietario del equipo de la NBA los Charlotte Hornets.​ Es considerado por la mayoría de aficionados y especialistas como el mejor jugador de baloncesto de todos los tiempos.', 5, 6),
+(6, 'Michael Phelps', 'michael_phelps', 'Michael Fred Phelps II​ es un exnadador de competición estadounidense​ y el deportista olímpico más condecorado de todos los tiempos, con un total de 28 medallas.​ Considerado el mejor de la historia de la especialidad', 6, 6),
+(7, 'Ivonne Montero', 'ivonne_montero', 'Es una actriz mexicana. Inició su carrera en 1997 con la empresa Televisa. El reconocimiento lo ganó con la interpretación de Rosa, un personaje en la película mexicana El tigre de Santa Julia en el año 2002. Así como con el papel protagónico de la telenovela ¡Anita, no te rajes! del 2004. En el 2012 participó en el programa La Isla, el reality de TV Azteca.', 7, 7),
+(8, 'Julio César', 'julio_el_azteca', 'Participante de La Isla, El Reality 2012 y de La Isla: La Revancha. Es un danzante prehispánico mexicano. Para mucha gente él es considerado como \"El Campeón sin Corona\". Julio es el participante que más veces tuvo el Brazalete de Salvación, con un total de 14 ocasiones. Ahora sigue participando con TV Azteca en el mismo reality con su sección \"Tiro al Blanco\". Hasta ahora Julio Cesar es el participante que más participación lleva durante las 5 temporadas de la Isla (Participante de la temporada 2012 y 2016, y encargado de diseñar las pruebas durante la temporada 2014 y 2015). La única temporada en la que Julio César no tuvo participación (Como participante o equipo de producción) fue en La Isla, El Reality 2013. Julio César es uno de los SubCampeones que calificó para entrar a La Isla: La Revancha, al igual que Delia García (2014).', 8, 4),
+(9, 'Ricardo Alcalá', 'suavesito_alcala', 'Ricardo Alcalá es un participante de La Isla, El Reality 2013 y de La Isla: La Revancha. En 2013 formo parte del Equipo de los Desconocidos y posteriormente en la Pre-Fusión pasó al Equipo de las Celebridades, aunque el no ganó la temporada, ganó premios como 2 Cuatrimotos y 100,000 pesos, estos premios ganados en el Segundo y Tercero de los Juego por el Premio. Se mostro como el lider de los desconocidos, tenia una gran rivalidad con el lider de las Celebridades Alberto Guerra pero en la pre fusion se convirtieron en grandes amigos dejando de lado sus diferencias. Aun siendo uno de los participantes mas fuertes de la temporada quedo en 5to lugar al tener una mala semana que le costo ir al juego a muerte que perderia con Tania Rincon.', 8, 4),
+(10, 'Elías Hernández', 'patrullero_hernandez', 'Es un futbolista profesional mexicano. Juega como mediocampista ofensivo y su equipo actual es el Club Deportivo Cruz Azul de la Primera División de México. Es un jugador con muy buena condición física, se desempeña por las bandas, y aunque es un futbolista diestro, también ejerce de buena manera cobertura por el lado izquierdo, Tiene un magnífico golpeo del esférico, sus tiros libres son espectaculares, así como también es un excelente cobrador tanto de tiros penales como de esquina.', 4, 5);
 
 -- --------------------------------------------------------
 
@@ -313,8 +326,11 @@ CREATE TABLE `listelement_type` (
 --
 
 INSERT INTO `listelement_type` (`id`, `title`, `url_clean`) VALUES
-(1, 'Producto', 'Producto'),
-(2, 'Post', 'post');
+(4, 'Reality', 'reality_show'),
+(5, 'Nacionales', 'nationals'),
+(6, 'Extranjero', 'foreign_person'),
+(7, 'Actores', 'actors'),
+(8, 'Conductores', 'conductors_tv');
 
 --
 -- Índices para tablas volcadas
@@ -457,7 +473,7 @@ ALTER TABLE `auth_user_user_permissions`
 -- AUTO_INCREMENT de la tabla `django_admin_log`
 --
 ALTER TABLE `django_admin_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `django_content_type`
@@ -475,19 +491,19 @@ ALTER TABLE `django_migrations`
 -- AUTO_INCREMENT de la tabla `listelement_category`
 --
 ALTER TABLE `listelement_category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `listelement_element`
 --
 ALTER TABLE `listelement_element`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `listelement_type`
 --
 ALTER TABLE `listelement_type`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Restricciones para tablas volcadas
